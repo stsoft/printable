@@ -49,7 +49,7 @@
                                                         array('label'=>'Benutzer anzeigen', 'url'=>array('/user'), 'visible'=>Yii::app()->user->isAdmin()),
                                                         '---',
                                                         array('label'=>'Mein Account'),
-                                                        array('label'=>'Profil anzeigen', 'url'=>array('/user/view&id='.Yii::app()->user->id)),
+                                                        array('label'=>'Profil anzeigen', 'url'=>array('/profile/profile/view&id='.Yii::app()->user->id)),
                                                         array('label'=>'Meine Dateien', 'url'=>'#'),
                                                         array('label'=>'Datei hochladen', 'url'=>'#'),
                                                         '---',

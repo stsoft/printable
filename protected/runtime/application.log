@@ -3718,3 +3718,43 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/printable/index.php?r=site/registration
 ---
+2013/08/19 15:20:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "user/view".' in C:\xampp\htdocs\printable\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('user/view')
+#1 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/printable/index.php?r=user/view&id=2
+HTTP_REFERER=http://localhost/printable/index.php
+---
+2013/08/19 15:21:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile/user/user/view".' in C:\xampp\htdocs\printable\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/user/us...')
+#1 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/printable/index.php?r=profile/user/user/view&id=1
+HTTP_REFERER=http://localhost/printable/index.php?r=profile/profile/view&id=2
+---
+2013/08/19 15:22:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\printable\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\CController.php(270): CController->missingAction('profile')
+#1 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/profile...')
+#3 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/printable/index.php?r=profile/profile/profile/view&id=1
+HTTP_REFERER=http://localhost/printable/index.php?r=profile/profile/view&id=1
+---
+2013/08/19 15:23:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "profile".' in C:\xampp\htdocs\printable\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\CController.php(270): CController->missingAction('profile')
+#1 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/profile...')
+#3 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/printable/index.php?r=profile/profile/profile/view&id=1
+HTTP_REFERER=http://localhost/printable/index.php?r=profile/profile/view&id=1
+---

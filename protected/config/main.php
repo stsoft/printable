@@ -30,7 +30,7 @@ return array(
 		// uncomment the following to enable the Gii tool
 		'user'=>array(
 			// enable cookie-based authentication
-                        'debug' => true
+                        //'debug' => true
 		),
                 'registration'=>array(),
                 'profile'=>array(),
