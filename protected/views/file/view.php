@@ -24,6 +24,5 @@ $this->menu=array(
 		'id',
 		'name',
 		'description',
-		'creation_date',
 	),
 )); ?>

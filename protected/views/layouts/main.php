@@ -50,8 +50,8 @@
                                                         '---',
                                                         array('label'=>'Mein Account'),
                                                         array('label'=>'Profil anzeigen', 'url'=>array('/profile/profile/view&id='.Yii::app()->user->id)),
-                                                        array('label'=>'Meine Dateien', 'url'=>array('file/files')),
-                                                        array('label'=>'Datei hochladen', 'url'=>array('file/create')),
+                                                        array('label'=>'Meine Dateien', 'url'=>array('/file/files')),
+                                                        array('label'=>'Datei hochladen', 'url'=>array('/file/create')),
                                                         '---',
                                                         array('label'=>'Logout', 'url'=>array('/site/logout'))             
                                             ))

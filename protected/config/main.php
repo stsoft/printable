@@ -20,6 +20,7 @@ return array(
 		'application.models.*',
                 'application.modules.user.models.*',
 		'application.components.*',
+                'application.extensions.EAjaxUpload.*',
 	),
         
         'aliases' => array(

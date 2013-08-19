@@ -4213,3 +4213,112 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/printable/index.php?r=file/files
 ---
+2013/08/19 21:15:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "profile/file/files".' in C:\xampp\htdocs\printable\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/file/fi...')
+#1 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/printable/index.php?r=profile/file/files
+HTTP_REFERER=http://localhost/printable/index.php?r=profile/profile/view&id=1
+---
+2013/08/19 21:23:31 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in C:\xampp\htdocs\printable\protected\extensions\xupload\actions\XUploadAction.php:281
+Stack trace:
+#0 C:\xampp\htdocs\printable\protected\extensions\xupload\actions\XUploadAction.php(191): XUploadAction->handleUploading()
+#1 C:\xampp\htdocs\printable\framework\web\actions\CAction.php(76): XUploadAction->run()
+#2 C:\xampp\htdocs\printable\framework\web\CController.php(308): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\printable\framework\web\CController.php(286): CController->runAction(Object(XUploadAction))
+#4 C:\xampp\htdocs\printable\framework\web\CController.php(265): CController->runActionWithFilters(Object(XUploadAction), Array)
+#5 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('upload')
+#6 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('site/upload')
+#7 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/printable/index.php?r=site/upload&PHPSESSID=51q66l84qvjh3vvn4e226tbm93&YII_CSRF_TOKEN=412db985f6821cf496e966c619fc92b58292dccb&qqfile=background1.jpg
+HTTP_REFERER=http://localhost/printable/index.php?r=file/create
+---
+2013/08/19 21:24:57 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(YumWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\printable\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\printable\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\printable\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\printable\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\printable\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\printable\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('upload')
+#8 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('file/upload')
+#9 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/printable/index.php?r=file/upload&PHPSESSID=51q66l84qvjh3vvn4e226tbm93&YII_CSRF_TOKEN=412db985f6821cf496e966c619fc92b58292dccb&qqfile=carbon-fibre-pattern.jpg
+HTTP_REFERER=http://localhost/printable/index.php?r=file/create
+---
+2013/08/19 21:27:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(YumWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\printable\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\printable\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\printable\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\printable\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\printable\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\printable\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('upload')
+#8 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('file/upload')
+#9 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/printable/index.php?r=file/upload&PHPSESSID=51q66l84qvjh3vvn4e226tbm93&YII_CSRF_TOKEN=412db985f6821cf496e966c619fc92b58292dccb&qqfile=background1.jpg
+HTTP_REFERER=http://localhost/printable/index.php?r=file/create
+---
+2013/08/19 21:27:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(YumWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\printable\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\printable\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\printable\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\printable\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\printable\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\printable\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('upload')
+#8 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('file/upload')
+#9 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/printable/index.php?r=file/upload&PHPSESSID=51q66l84qvjh3vvn4e226tbm93&YII_CSRF_TOKEN=412db985f6821cf496e966c619fc92b58292dccb&qqfile=anfahrt.pdf
+HTTP_REFERER=http://localhost/printable/index.php?r=file/create
+---
+2013/08/19 21:27:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(YumWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\printable\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\printable\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\printable\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\printable\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\printable\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\printable\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('upload')
+#8 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('file/upload')
+#9 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/printable/index.php?r=file/upload&PHPSESSID=51q66l84qvjh3vvn4e226tbm93&YII_CSRF_TOKEN=412db985f6821cf496e966c619fc92b58292dccb&qqfile=background1.jpg
+HTTP_REFERER=http://localhost/printable/index.php?r=file/create
+---
+2013/08/19 21:28:23 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(YumWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\printable\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\printable\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\printable\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\printable\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\printable\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\printable\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('upload')
+#8 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('file/upload')
+#9 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/printable/index.php?r=file/upload&PHPSESSID=51q66l84qvjh3vvn4e226tbm93&YII_CSRF_TOKEN=412db985f6821cf496e966c619fc92b58292dccb&qqfile=carbon-fibre-pattern.jpg
+HTTP_REFERER=http://localhost/printable/index.php?r=file/create
+---

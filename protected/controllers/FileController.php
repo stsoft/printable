@@ -28,7 +28,7 @@ class FileController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','files'),
+				'actions'=>array('index','view','files', 'upload'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -185,6 +185,25 @@ class FileController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+        public function actionUpload()
+        {
+
+                Yii::import("ext.EAjaxUpload.qqFileUploader");
+
+                $folder=Yii::getPathOfAlias('webroot').'/images/files/';// folder for uploaded files
+                $allowedExtensions = array("jpg","jpeg", "png");//array("jpg","jpeg","gif","exe","mov" and etc...
+                $sizeLimit = 100 * 1024 * 1024;// maximum file size in bytes
+                $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
+                $result = $uploader->handleUpload($folder);
+                $return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+
+                $fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
+                $fileName=$result['filename'];//GETTING FILE NAME
+                //$img = CUploadedFile::getInstance($model,'image');
+
+                echo $return;// it's array
+        }
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
