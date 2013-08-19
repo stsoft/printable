@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 19. Aug 2013 um 16:35
+-- Erstellungszeit: 19. Aug 2013 um 23:06
 -- Server Version: 5.5.16
 -- PHP-Version: 5.3.8
 
@@ -335,9 +335,20 @@ CREATE TABLE IF NOT EXISTS `tbl_files` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(128) DEFAULT NULL,
   `description` longtext,
-  `upload_date` date DEFAULT NULL,
+  `creation_date` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Daten für Tabelle `tbl_files`
+--
+
+INSERT INTO `tbl_files` (`id`, `name`, `description`, `creation_date`) VALUES
+(5, 'dsd', 'sdcdsd', 0),
+(6, 'sdcd', 'sdcsdc', 0),
+(7, 'ddssddsd', 'ggfbgf', 0),
+(8, 'sdsd', 'ssdsd', 0),
+(9, 'ssddd', 'sddsdsd', 1376938858);
 
 -- --------------------------------------------------------
 
@@ -363,7 +374,17 @@ CREATE TABLE IF NOT EXISTS `tbl_files_user` (
   `file_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Daten für Tabelle `tbl_files_user`
+--
+
+INSERT INTO `tbl_files_user` (`id`, `file_id`, `user_id`) VALUES
+(1, 5, 1),
+(3, 7, 1),
+(4, 8, 1),
+(5, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -2912,7 +2933,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `salt`, `activationKey`, `createtime`, `lastvisit`, `lastaction`, `lastpasswordchange`, `superuser`, `status`, `avatar`, `notifyType`) VALUES
-(1, 'admin', '7f5472719545842361a23ae200e32fe6ec2978f478ff8b0376497d6d091ae298d4761c870aa050ffc4fcf8acd105862d112f8c4c986ee5d4c2c7c3aaa1d04a2f', 'XNksNuNdeyJ+hdG5OaaicO4Aqgp78IYxJXDFYDs6Dll1S3A/VlqmrHhoS66mGlCU+xC9RKYzGPg67Qy1doYexg==', '', 1376916746, 1376922013, 1376922804, 0, 1, 1, NULL, 'Instant'),
+(1, 'admin', '7f5472719545842361a23ae200e32fe6ec2978f478ff8b0376497d6d091ae298d4761c870aa050ffc4fcf8acd105862d112f8c4c986ee5d4c2c7c3aaa1d04a2f', 'XNksNuNdeyJ+hdG5OaaicO4Aqgp78IYxJXDFYDs6Dll1S3A/VlqmrHhoS66mGlCU+xC9RKYzGPg67Qy1doYexg==', '', 1376916746, 1376922013, 1376941878, 0, 1, 1, NULL, 'Instant'),
 (2, 'demo', '0361112285f53624ca5beef75a6843554e417c655b5a6166c98d1deb84d5c07159c497120c7b1fa8aa8b5b2df2024642e3c586cf01e1c96704ad5d0181bc95ce', 'eFJbOmJrGJ58yogQVpf7ck+0Rt1CDsJKH9qjB75hvhnjveWBVB966Wokstcn81j25Ng4yYGDnFdHADGBFp6VCA==', '', 1376916746, 1376918708, 1376922000, 0, 0, 1, 'images/2_Y0UJC.png', 'Instant');
 
 -- --------------------------------------------------------
