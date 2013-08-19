@@ -1,22 +1,22 @@
 <?php
 
 /**
- * This is the model class for table "tbl_user".
+ * This is the model class for table "tbl_files".
  *
- * The followings are the available columns in table 'tbl_user':
- * @property integer $id
- * @property string $username
- * @property string $password
- * @property string $email
+ * The followings are the available columns in table 'tbl_files':
+ * @property string $id
+ * @property string $name
+ * @property string $description
+ * @property string $creation_date
  */
-class User extends CActiveRecord
+class File extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tbl_user';
+		return 'tbl_files';
 	}
 
 	/**
@@ -27,11 +27,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, email, name, prename', 'required'),
-			array('username, password, email, name, prename',  'length', 'max'=>128),
+			array('name', 'length', 'max'=>128),
+			array('description, creation_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, username, password, email, name, prename', 'safe', 'on'=>'search'),
+			array('id, name, description, creation_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -43,7 +43,7 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'files'=>array(self::HAS_MANY, 'FileUser', 'user_id')
+                    'user_id'=>array(self::HAS_MANY, 'FileUser', 'user_id')
 		);
 	}
 
@@ -54,11 +54,9 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => 'Username',
-			'password' => 'Password',
-			'email' => 'Email',
-                        'name' => 'Name',
-                        'prename' => 'Vorname'
+			'name' => 'Name',
+			'description' => 'Description',
+			'creation_date' => 'Creation Date',
 		);
 	}
 
@@ -79,14 +77,22 @@ class User extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('email',$this->email,true);
-                $criteria->compare('name',$this->name,true);
-                $criteria->compare('prename',$this->prename,true);
-
+                
+/*
+                $relations = FileUser::model()->findByAttributes(array('user_id' => Yii::app()->user->id));
+                
+                foreach($relations as  $relation){
+                    print_r($relation);
+                }
+                $criteria->condition = 'user_id = ' . Yii::app()->user->id;
+  */              
+                
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('creation_date',$this->creation_date,true);
+                
+                
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -96,7 +102,7 @@ class User extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return User the static model class
+	 * @return File the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

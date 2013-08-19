@@ -50,8 +50,8 @@
                                                         '---',
                                                         array('label'=>'Mein Account'),
                                                         array('label'=>'Profil anzeigen', 'url'=>array('/profile/profile/view&id='.Yii::app()->user->id)),
-                                                        array('label'=>'Meine Dateien', 'url'=>'#'),
-                                                        array('label'=>'Datei hochladen', 'url'=>'#'),
+                                                        array('label'=>'Meine Dateien', 'url'=>array('file/files')),
+                                                        array('label'=>'Datei hochladen', 'url'=>array('file/create')),
                                                         '---',
                                                         array('label'=>'Logout', 'url'=>array('/site/logout'))             
                                             ))
@@ -84,7 +84,6 @@
 	<div id="footer">
 		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
 		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
 </div><!-- page -->
