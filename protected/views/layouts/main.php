@@ -28,7 +28,6 @@
 
 	<div>
             <?php 
-                $user = User::model()->findByAttributes( array( 'username' => Yii::app()->user->name));
                 $this->widget('bootstrap.widgets.TbNavbar', array(
                         'items' => array(
                                 array(
@@ -44,18 +43,18 @@
                                     'htmlOptions'=>array('class'=>'pull-right'),
                                     'encodeLabel'=>false,
                                     'items'=>array(
-                                            array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                                            array('label'=>'<img class="img-rounded mini-thumb" src="/' . Yii::app()->name . '/images/profilepictures/' . $user->id . '.png"/>' . $user->username, 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
-                                                        array('label'=>'Administration','visible'=>$user->admin),
-                                                        array('label'=>'Benutzer anzeigen', 'url'=>array('/user'), 'visible'=>$user->admin),
+                                            array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),                                        
+                                            array('label'=>'<img class="img-rounded mini-thumb" src="/' . Yii::app()->name . '/images/profilepictures/' . Yii::app()->user->id . '.png"/>' . Yii::app()->user->name, 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
+                                                        array('label'=>'Administration','visible'=>Yii::app()->user->isAdmin()),
+                                                        array('label'=>'Benutzer anzeigen', 'url'=>array('/user'), 'visible'=>Yii::app()->user->isAdmin()),
                                                         '---',
                                                         array('label'=>'Mein Account'),
-                                                        array('label'=>'Profil anzeigen', 'url'=>array('/user/view&id='.$user->id)),
+                                                        array('label'=>'Profil anzeigen', 'url'=>array('/user/view&id='.Yii::app()->user->id)),
                                                         array('label'=>'Meine Dateien', 'url'=>'#'),
                                                         array('label'=>'Datei hochladen', 'url'=>'#'),
                                                         '---',
-                                                        array('label'=>'Logout', 'url'=>array('/site/logout'))                
-                                            )),
+                                                        array('label'=>'Logout', 'url'=>array('/site/logout'))             
+                                            ))
                                     ),
                             ),
                             '<form class="navbar-search pull-right" action=""><input type="text" class="search-query span2" placeholder="Search"></form>'

@@ -51,15 +51,7 @@
 		<?php echo $form->error($model,'email'); ?>
 	</div>
         
-                <?php echo $form->labelEx($model,'photos'); ?>
-                <?php
-                    $this->widget('xupload.XUpload', array(
-                                        'url' => Yii::app()->createUrl("/controllers/UserController"),
-                                        'model' => $photos,
-                                        'attribute' => 'file',
-                                        'name' => 'upload'
-                    ));
-                ?>
+           
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
