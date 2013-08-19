@@ -738,12 +738,17 @@ class YumUser extends YumActiveRecord
 	{
 		if (Yum::hasModule('avatar') && $this->profile) {
 			$options = array();
-			if ($thumb)
-				$options = array('class' => 'avatar', 'style' => 'width: ' . Yum::module('avatar')->avatarThumbnailWidth . ' px;');
-			else
+                        $return = '';
+                                                
+			if ($thumb){
+				$options = array('class' => 'mini-thumb', 'style' => 'width: ' . Yum::module('avatar')->avatarThumbnailWidth . ' px;');
+                                $return = '<div class="mini-thumb">';
+                        }
+			else{
 				$options = array('class' => 'avatar', 'style' => 'width: ' . Yum::module('avatar')->avatarDisplayWidth . ' px;');
-
-			$return = '<div class="avatar">';
+                                $return = '<div class="avatar">';
+                        }
+                      
 
 			if(Yum::module('avatar')->enableGravatar && $this->avatar == 'gravatar') 
 				return CHtml::image(

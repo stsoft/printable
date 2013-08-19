@@ -250,8 +250,13 @@ div.search-form
     width:20px;
     margin-right:10px;
     border: 1px solid #d4d4d4;
+    float:left;
 }
 
 h5 {
     color:#0088cc !important;
+}
+
+.avatar{
+    width:150px;
 }
