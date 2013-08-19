@@ -43,7 +43,7 @@
                                     'htmlOptions'=>array('class'=>'pull-right'),
                                     'encodeLabel'=>false,
                                     'items'=>array(
-                                            array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),                                        
+                                            array('label'=>'Login', 'url'=>array('user/user/login'), 'visible'=>Yii::app()->user->isGuest),                                        
                                             array('label'=>'<img class="img-rounded mini-thumb" src="/' . Yii::app()->name . '/images/profilepictures/' . Yii::app()->user->id . '.png"/>' . Yii::app()->user->name, 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest, 'items'=>array(
                                                         array('label'=>'Administration','visible'=>Yii::app()->user->isAdmin()),
                                                         array('label'=>'Benutzer anzeigen', 'url'=>array('/user'), 'visible'=>Yii::app()->user->isAdmin()),
@@ -61,6 +61,8 @@
 
                         )
                 ));
+             
+            
             ?>
 	</div><!-- mainmenu -->
 	<?php 

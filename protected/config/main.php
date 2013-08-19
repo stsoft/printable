@@ -18,6 +18,7 @@ return array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
+                'application.modules.user.models.*',
 		'application.components.*',
 	),
         
@@ -27,7 +28,13 @@ return array(
         ),
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		
+		'user'=>array(
+			// enable cookie-based authentication
+                        'debug' => true
+		),
+                'registration'=>array(),
+                'profile'=>array(),
+                'avatar'=>array(),
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'test',
@@ -39,10 +46,12 @@ return array(
 
 	// application components
 	'components'=>array(
+            'cache' => array('class' => 'system.caching.CDummyCache'),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
-                        'class' => 'WebUser'
+                        'class' => 'application.modules.user.components.YumWebUser',
+                        'loginUrl' => array('//user/user/login')
 		),
 		// uncomment the following to enable URLs in path-format
 		/*
