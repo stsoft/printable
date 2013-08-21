@@ -9,17 +9,49 @@ class YumUserMenu extends CPortlet {
 				Yum::t('Logged in as'),
 				Yii::app()->user->data()->username);
 */
-		$this->contentCssClass = 'menucontent';
+		$this->contentCssClass = '';
+                $this->htmlOptions = array("class" => "");
 		return parent::init();
 	}
 
 	public function run() {
-		$this->widget('YumMenu', array(
-					'items' => $this->getMenuItems()
-					));
-
+		$this->widget('bootstrap.widgets.TbMenu', array(
+                    'type'=>'list',
+                    'items' => $this->getMenuItemsBootstrap()
+                ));
 		parent::run();
 	}
+        
+        public function getMenuItemsBootstrap(){
+            return array(
+                array('label' => 'Profile', 'visible' => Yum::hasModule('profile'), 'itemOptions'=>array('class'=>'nav-header')),
+                array('label' => 'My profile', 'url' => array('//profile/profile/view'), 'visible' => Yum::hasModule('profile')),
+                array('label' => 'Edit personal data', 'url' => array('//profile/profile/update'), 'visible' => Yum::hasModule('profile')),
+                array('label' => 'Upload avatar image', 'url' => array('/avatar/avatar/editAvatar'), 'visible' => Yum::hasModule('avatar')),
+                array('label' => 'Privacy settings', 'url' => array('/profile/privacy/update'), 'visible' => Yum::hasModule('profile')),
+                
+                array('label' => 'Membership', 'visible' => Yum::hasModule('membership'), 'itemOptions'=>array('class'=>'nav-header')),
+                array('label' => 'My memberships', 'url' => array('/membership/membership/index'), 'visible' => Yum::hasModule('membership')),
+                array('label' => 'Browse memberships', 'url' => array('/membership/membership/order'), 'visible' => Yum::hasModule('membership')),
+                
+                array('label' => 'Messages', 'itemOptions'=>array('class'=>'nav-header'), 'visible' => Yum::hasModule('message')),
+                array('label' => 'My inbox', 'url' => array('/message/message/index'), 'visible' => Yum::hasModule('message')),
+                array('label' => 'Sent messages', 'url' => array('/message/message/sent'), 'visible' => Yum::hasModule('message')),
+                
+                array('label' => 'Social', 'itemOptions'=>array('class'=>'nav-header'), 'visible' => Yum::hasModule('friendship')),
+		array('label' => 'My friends','url' => array('/friendship/friendship/index'),'visible' => Yum::hasModule('friendship')),
+		array('label' => 'Browse users', 'url' => array('/user/user/browse'),'visible' => Yum::hasModule('friendship')),
+		array('label' => 'My groups', 'url' => array('/usergroup/groups/index'),'visible' => Yum::hasModule('usergroup')),
+		array('label' => 'Create new usergroup', 'url' => array('/usergroup/groups/create'),'visible' => Yum::hasModule('usergroup')),
+		array('label' => 'Browse usergroups', 'url' => array('/usergroup/groups/browse'),'visible' => Yum::hasModule('usergroup')),
+                
+                array('label' => 'Misc', 'itemOptions'=>array('class'=>'nav-header')),
+                array('label' => 'Change password', 'url' => array('//user/user/changePassword')),
+                array('label' => 'Delete account', 'url' => array('//user/user/delete')),
+                array('label' => 'Logout', 'url' => array('//user/user/logout')),
+ 
+            );
+        }
 
 	public function getMenuItems() {
 		return array(
