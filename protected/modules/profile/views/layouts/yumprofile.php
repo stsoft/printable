@@ -6,7 +6,8 @@ Yii::app()->clientScript->registerCssFile(
 $module = Yii::app()->getModule('user');
 $this->beginContent($module->baseLayout); ?>
 
-<div id="usermenu">
+<!-- <div id="usermenu"> -->
+<div class="well pull-right menu-printable">
 <?php Yum::renderFlash(); ?>
 <?php 
 if(Yum::hasModule('message')) {

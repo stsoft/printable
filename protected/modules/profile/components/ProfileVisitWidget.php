@@ -4,13 +4,15 @@ Yii::import('zii.widgets.CPortlet');
 
 class ProfileVisitWidget extends CPortlet
 {
-	public $decorationCssClass = 'portlet-decoration profilevisits';
+	public $decorationCssClass = 'nav-header nav-header';
 
 	public function init() {
 		if(!Yum::module('profile')->enableProfileVisitLogging)
 			return false;
 
-		$this->title=Yum::t('Profile visits');
+		$this->title='Profile visits';
+                $this->titleCssClass = '';
+                $this->contentCssClass = "profile-visits";
 		if(Yii::app()->user->isGuest)
 			return false;
 
@@ -19,9 +21,10 @@ class ProfileVisitWidget extends CPortlet
 
 	protected function renderContent()
 	{
+                
 		if(!Yum::module('profile')->enableProfileVisitLogging)
 			return false;
-
+                
 		parent::renderContent();
 		if(Yii::app()->user->isGuest)
 			return false;

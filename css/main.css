@@ -260,3 +260,15 @@ h5 {
 .avatar{
     width:150px;
 }
+
+.menu-printable{
+    padding:8px 0px !important;
+    width:250px;
+}
+
+.profile-visits{
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 5px;
+    font-size:14px;
+}
