@@ -50,7 +50,7 @@ class YumAdminMenu extends CPortlet {
                         array('label' => 'Create new payment type', 'url' => array('//membership/payment/create'), 'visible' => Yum::hasModule('membership')),
                         
                         array('label'=>'Profiles', 'itemOptions'=>array('class'=>'nav-header'), 'visible' => Yum::hasModule('profile')),
-                        array('label' => 'Profil anzeigen', 'url' => array('//profile/profile/view' . Yii::app()->user->id),'visible' => Yum::hasModule('profile')),
+                        array('label' => 'Profil anzeigen', 'url' => array('//profile/profile/view'),'visible' => Yum::hasModule('profile')),
                         array('label' => 'Manage profiles', 'url' => array('//profile/profile/admin'),'visible' => Yum::hasModule('profile')),
                         array('label' => 'Show profile visits', 'url' => array('//profile/profile/visits'),'visible' => Yum::hasModule('profile')),
                         array('label' => 'Manage profile fields', 'url' => array('//profile/fields/admin'),'visible' => Yum::hasModule('profile')),

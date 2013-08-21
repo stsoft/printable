@@ -4400,3 +4400,14 @@ REQUEST_URI=/printable/index.php?r=profile/profile/view&id=1
 in C:\xampp\htdocs\printable\protected\modules\profile\components\ProfileVisitWidget.php (26)
 in C:\xampp\htdocs\printable\protected\modules\profile\views\layouts\yumprofile.php (19)
 in C:\xampp\htdocs\printable\protected\modules\profile\controllers\YumProfileController.php (108)
+2013/08/22 01:13:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view1".' in C:\xampp\htdocs\printable\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\printable\framework\web\CController.php(270): CController->missingAction('view1')
+#1 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(282): CController->run('view1')
+#2 C:\xampp\htdocs\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('profile/profile...')
+#3 C:\xampp\htdocs\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\printable\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/printable/index.php?r=profile/profile/view1
+HTTP_REFERER=http://localhost/printable/index.php?r=profile/profile/view&id=1
+---
