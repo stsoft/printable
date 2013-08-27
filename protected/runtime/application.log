@@ -4411,3 +4411,25 @@ Stack trace:
 REQUEST_URI=/printable/index.php?r=profile/profile/view1
 HTTP_REFERER=http://localhost/printable/index.php?r=profile/profile/view&id=1
 ---
+2013/08/27 11:32:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in C:\xampp\htdocs\printable\printable\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\printable\printable\framework\web\CController.php(270): CController->missingAction('user')
+#1 C:\xampp\htdocs\printable\printable\framework\web\CWebApplication.php(282): CController->run('user')
+#2 C:\xampp\htdocs\printable\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/user/...')
+#3 C:\xampp\htdocs\printable\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\printable\printable\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/printable/printable/index.php?r=user/user/user/login
+HTTP_REFERER=http://localhost/printable/printable/index.php?r=user/auth
+---
+2013/08/27 11:32:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "user".' in C:\xampp\htdocs\printable\printable\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\printable\printable\framework\web\CController.php(270): CController->missingAction('user')
+#1 C:\xampp\htdocs\printable\printable\framework\web\CWebApplication.php(282): CController->run('user')
+#2 C:\xampp\htdocs\printable\printable\framework\web\CWebApplication.php(141): CWebApplication->runController('user/user/user/...')
+#3 C:\xampp\htdocs\printable\printable\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\printable\printable\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/printable/printable/index.php?r=user/user/user/login
+HTTP_REFERER=http://localhost/printable/printable/index.php?r=user/auth
+---
